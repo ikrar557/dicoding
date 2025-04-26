@@ -92,7 +92,7 @@ Tujuan dari penggunaan dataset ini adalah untuk membangun model yang mampu mempe
    ![multivariate-1](https://github.com/user-attachments/assets/e13c8572-101f-4bd4-bcd1-d6afbf445c26)
 
    Fitur `Open`, `High`, `Low`, `Close`, dan `Adj Close` memiliki korelasi sempurna (1.00) yang bisa menunjukan bahwa kelima fitur tersebut **overlapped**, dan jika digunakan bersamaan dapat menyebabkan redudansi fitur, oleh karena       itu pada model predictive ini hanya fitur `Close` yang akan digunakan sebagai target.
-3. Scatter Plot: Volume vs Close
+2. Scatter Plot: Volume vs Close
 
    ![multivariate-2](https://github.com/user-attachments/assets/6405166e-82a0-42f2-92cf-011c66e4bbbc)
 
@@ -214,7 +214,6 @@ GRU dipilih sebagai model akhir dengan nilai evaluasi lebih baik daripada LSTM, 
 
 ![evaluasi_prediksi](https://github.com/user-attachments/assets/1d6a1ff1-a66e-4c94-9024-6eddb2e8fa2c)
 
-
 ## Evaluation
 
 ---
@@ -307,6 +306,39 @@ $$
 | **GRU**  | 3.3612 | 23.3751  | 4.8348  | 0.9981 |
 
 Catatan: nilai akhir mungkin akan berbeda ketika dijalankan ulang
+
+### Dampak Model Terhadap *Business Understanding*
+
+#### Problem Statements
+
+* Bagaimana cara memprediksi harga saham secara akurat untuk membantu pengambilan keputusan investasi yang lebih baik?
+  * Dengan membangun model LSTM dan GRU berbasis *time series* , menggunakan data historis 60 hari sebagai input dan pendekatan *sliding window*, lalu mengevaluasi akurasi dengan metrik R², MAE, MSE, dan RMSE dan melakukan perbandingan untuk menentukan model akhir yang dipilih.
+* Dapatkah model prediksi harga saham memberikan hasil yang stabil dan dapat diandalkan meskipun hanya dengan data historis terbatas?
+  * Kedua model yang diajukan, yaitu **GRU** dan **LSTM** mampun memprediksi harga saham secara akurat dan stabil dengan data historis yang terbatas, bahkan dengan hanya menggunakan data historis 60 hari, kedua model mampu mendapatkan evaluasi akhir untuk **R²** di atas 0.99 atau mendekati sempurna.
+* Bagaimana memilih arsitektur model yang paling tepat untuk menangani data time series dengan karakteristik fluktuatif seperti harga saham?
+  * Berdasarkan hasil evaluasi menggunakan  **MAE, MSE, RMSE,** dan **R²** , kedua model memiliki performa yang baik, namun **GRU** sedikit lebih unggul dari **LSTM** dalam efisiensi pelatihan dan nilai error yang lebih rendah. Oleh karena itu, **GRU** dapat direkomendasikan untuk menangani data time series dalam waktu historis pendek seperti kasus submission ini adalah 60 hari.
+
+#### Goals
+
+* Membangun model prediksi harga saham yang dapat digunakan untuk membantu investor dalam mengambil keputusan investasi yang lebih tepat.
+
+  * Tercapai, karena model mampu menghasilkan prediksi yang sangat mendekati nilai aktual dan dapat dimanfaatkan sebagai bahan pertimbangan investasi.
+* Menguji seberapa baik model dapat memberikan prediksi yang stabil meskipun data yang digunakan terbatas.
+
+  * Tercapai, model mampu mempertahankan kestabilan dan performa meskipun hanya menggunakan data 60 hari terakhir, sesuai skenario *windowed sequence* yang dipilih.
+* Menentukan arsitektur model terbaik yang sesuai untuk memprediksi data saham harian.
+
+  * Tercapai, melalui evaluasi perbadingan antara LSTM dan GRU menggunakan metrik seperti MAE, MSE, MSRE, dan R² serta komparasi dalam bentuk visualisasi (line chart). GRU dipilih sebagai model yang lebih efisien dan akurat dalam kasus ini.
+
+### Solution statements
+
+- Membangun model prediksi harga saham menggunakan arsitektur **LSTM (Long Short-Term Memory)** dan **GRU (Gated Recurrent Unit)**, yang keduanya dirancang untuk menangani data *time series* dan dapat memahami pola historis pergerakan harga saham.
+  - Berdampak, karena kedua arsitektur tersebut, yaitu LSTM dan GRU berhasil mengenali pola historis dengan akurat, dan model-model tersebut memang cocok untuk menangani data *time series*
+
+* Menilai kinerja model dengan menggunakan metrik evaluasi yang sesuai, seperti  **MAE (Mean Absolute Error)**, **MSE (Mean Squared Error)**, **RMSE (Root Mean Squared Error)**, dan **R²**, untuk memastikan model dapat memberikan prediksi yang akurat dan dapat diandalkan.
+  * Berdampak, dengan metrik-metrik tersebut kita dapat mengetahui nilai akurasi atau performa model dan dapat menentukan apakah model yang dikembangkan dapat diandalkan untuk prediksi atau tidak.
+* Melakukan evaluasi perbandingan antar arsitektur model untuk menentukan mana yang paling efektif dalam konteks data saham.
+  * Berdampak, dengan melakukan evalusasi komparatif secara menyeluruh, dapat diketahui bahwa model GRU lebih akurat dan efisien untuk skenario atau konteks data saham dengan data historis terbatas.
 
 ## Kesimpulan
 
