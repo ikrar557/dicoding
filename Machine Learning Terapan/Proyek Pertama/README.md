@@ -79,19 +79,23 @@ Tujuan dari penggunaan dataset ini adalah untuk membangun model yang mampu mempe
 ### Analisis Univariate
 
 1. Distribusi Data
-   ![Univariate 1](images/univariate-1.png)
+   ![univariate-1](https://github.com/user-attachments/assets/d94a9e3e-2053-442d-9ef4-0efeb6e242b7)
    Berdasarkan distribusi diatas, sebagain besar harga sahama berada di level atau harga rendah, meskipun begitu harga saham juga meningkatkan secara signifikan dalam jangka waktu panjang.
 2. Tren Harian Harga Penutupan
-   ![Univariate-2](images/univariate-2.png)
+   ![univariate-2](https://github.com/user-attachments/assets/6543caa6-6d2a-470d-bea1-dd97aad04b9c)
    Harga saham mengalami pertumbuhan jangkan panjang yang kuat bahkan pada beberapa periode lonjakan naik secara tajam namun dengan beberapa periode yang menunjukan harga saham masih stagnan .
 
 ### Analisis Multivariate
 
 1. Analisa Korelasi Antar Fitur
-   ![Multivariate-1](images/multivariate-1.png)
-   Fitur `Open`, `High`, `Low`, `Close`, dan `Adj Close` memiliki korelasi sempurna (1.00) yang bisa menunjukan bahwa kelima fitur tersebut **overlapped**, dan jika digunakan bersamaan dapat menyebabkan redudansi fitur, oleh karena itu pada model predictive ini hanya fitur `Close` yang akan digunakan sebagai target.
-2. Scatter Plot: Volume vs Close
-   ![Multivariate-2](images/multivariate-2.png)
+
+   ![multivariate-1](https://github.com/user-attachments/assets/e13c8572-101f-4bd4-bcd1-d6afbf445c26)
+
+   Fitur `Open`, `High`, `Low`, `Close`, dan `Adj Close` memiliki korelasi sempurna (1.00) yang bisa menunjukan bahwa kelima fitur tersebut **overlapped**, dan jika digunakan bersamaan dapat menyebabkan redudansi fitur, oleh karena       itu pada model predictive ini hanya fitur `Close` yang akan digunakan sebagai target.
+3. Scatter Plot: Volume vs Close
+
+   ![multivariate-2](https://github.com/user-attachments/assets/6405166e-82a0-42f2-92cf-011c66e4bbbc)
+
    Tidak tampak pola linier yang kuat antara harga penutupan (Close) dengan Volume. Yang mungkin volume hanya mencerminkan aktivitas pasar saja tetapi tidak mempengaruhi arah harga baik turun ataupun naik.
 
 ## Data Preparation
@@ -208,7 +212,8 @@ LSTM adalah jenis **Recurrent Neural Network (RNN)** yang dirancang untuk mengat
 
 GRU dipilih sebagai model akhir dengan nilai evaluasi lebih baik daripada LSTM, bahkan saat pelatihan dan evaluasi model GRU juga jauh lebih cepat mengungguli LSTM. Pada skenario ini, *sequence window* yang dipilih juga hanya 60 hari terakhir, sehingga model hanya mempelajari data dalam jangka pendek. Oleh karena itu GRU lebih baik dalam kasus ini. Terlampir pada gambar dibawah, prediksi dengan menggunakan model GRU (warna hijau) menghasilkan prediksi yang hampir sesuai dengan nilai asli dari harga saham daripada menggunakan model LSTM (warna merah).
 
-![Visualisasi Data](images/evaluasi_prediksi.png)
+![evaluasi_prediksi](https://github.com/user-attachments/assets/1d6a1ff1-a66e-4c94-9024-6eddb2e8fa2c)
+
 
 ## Evaluation
 
