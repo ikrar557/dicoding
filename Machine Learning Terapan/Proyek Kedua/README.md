@@ -2,13 +2,13 @@
 
 ---
 
-## 1. Domain Proyek
+## 1.  Project Overview
 
-Buku merupakan salah satu sumber pembelajaran yang kaya akan pengetahuan. Namun, seiring dengan pesatnya perkembangan teknologi, posisi buku fisik mulai tergeser. Hal ini ditandai dengan menurunnya minat baca serta peralihan pengguna ke format digital seperti *e-book*. Merespons perubahan ini, banyak perusahaan penerbit dan penyedia buku—seperti *Gramedia,* *Amazon*, dan lainnya—mulai memasarkan buku melalui platform *marketplace* .
+Buku merupakan salah satu media pembelajaran yang kaya akan pengetahuan. Namun, dengan kemajuan teknologi yang pesat, keberadaan buku fisik mulai tergantikan. Hal ini terlihat dari penurunan minat baca serta pergeseran ke format digital seperti *e-book*. Ada juga faktor lain seperti penggunaan *gadget*  ataupun fasilitas perpustakaan yang kurang memadai [[1]](https://sihojurnal.com/index.php/identik/article/view/50). Menyikapi perubahan ini, banyak penerbit dan penyedia buku seperti *Gramedia* dan *Intan Pariwara* mulai menjual buku melalui platform *marketplace* atau menyediakan opsi *e-book*.
 
-Perubahan ini juga membawa tantangan baru, khususnya dalam hal bagaimana merekomendasikan buku yang sesuai dengan preferensi pembaca. Tidak seperti film yang menawarkan *trailer* untuk memberikan gambaran isi sebelum ditonton, buku umumnya hanya menyediakan sinopsis, sehingga menyulitkan pembaca—terutama yang baru memulai—untuk memilih bacaan secara efektif. Proses pemilihan buku secara manual pun dapat memakan waktu.
+Perubahan tersebut juga menimbulkan tantangan baru, terutama dalam memberikan rekomendasi buku yang sesuai dengan preferensi pembaca. Tidak seperti film yang memiliki *trailer* untuk memberikan gambaran awal, buku umumnya hanya menyediakan sinopsis, sehingga menyulitkan pembaca, terutama pemula dalam memilih bacaan yang tepat. Proses pemilihan secara manual pun bisa memakan waktu.
 
-Untuk menjawab tantangan tersebut, diusulkan penerapan pendekatan *machine learning* guna membangun sistem rekomendasi buku yang personal. Sistem ini akan menggabungkan dua metode utama, yaitu *Content-Based Filtering*, yang memanfaatkan informasi seperti judul dan penulis, serta *Collaborative Filtering*, yang menganalisis pola interaksi antar pengguna. Pendekatan ini diharapkan mampu meningkatkan relevansi rekomendasi serta mendorong minat baca di kalangan pengguna.
+Untuk mengatasi tantangan ini, pendekatan *machine learning* diusulkan dalam membangun sistem rekomendasi buku yang bersifat personal. Sistem ini akan menggabungkan dua metode utama, yaitu *Content-Based Filtering* yang memanfaatkan informasi seperti judul dan penulis [[2]](https://online-journals.org/index.php/i-jet/article/view/18851), serta *Collaborative Filtering* yang menganalisis pola interaksi antar pengguna [[3]](https://www.informatica.si/index.php/informatica/article/view/6950). Pendekatan ini diharapkan dapat meningkatkan relevansi rekomendasi dan mendorong minat baca pengguna.
 
 ### 1.1. Mengapa masalah ini penting?
 
@@ -27,23 +27,23 @@ Sistem rekomendasi buku memainkan peran vital dalam mempermudah pengguna menemuk
 
 Berdasarkan latar belakang di atas, beberapa permasalahan yang dapat dirumuskan adalah sebagai berikut:
 
-1. **Bagaimana cara melakukan proses pengolahan data yang optimal agar dapat digunakan dalam pembangunan sistem rekomendasi buku yang efektif?**
-2. **Bagaimana cara membangun sistem rekomendasi dengan melihat kemiripan dari buku-buku yang telah disukai oleh pengguna sebelumnya?**
-3. **Bagaimana cara membangun sistem rekomendasi dengan melihat preferensi antar pengguna dalam memilih buku?**
+1. Bagaimana cara melakukan proses pengolahan data yang optimal agar dapat digunakan dalam pembangunan sistem rekomendasi buku yang efektif?
+2. Bagaimana cara membangun sistem rekomendasi dengan melihat kemiripan dari buku-buku yang telah disukai oleh pengguna sebelumnya?
+3. Bagaimana cara membangun sistem rekomendasi dengan melihat preferensi antar pengguna dalam memilih buku?
 
 ### 2.2. Goals
 
 Untuk mencapai tujuan di atas, beberapa solusi yang diusulkan adalah:
 
-1. **Mengolah dan menyiapkan data secara efisien agar dapat dimanfaatkan dalam pembangunan sistem rekomendasi buku.**
-2. **Mengembangkan sistem rekomendasi yang mampu menyarankan buku dengan karakteristik serupa dari buku-buku yang telah disukai pengguna.**
-3. **Membangun sistem rekomendasi yang mampu mengenali preferensi pengguna lain yang memiliki kesamaan minat, untuk memberikan saran buku yang relevan.**
+1. Mengolah dan menyiapkan data secara efisien agar dapat dimanfaatkan dalam pembangunan sistem rekomendasi buku.
+2. Mengembangkan sistem rekomendasi yang mampu menyarankan buku dengan karakteristik serupa dari buku-buku yang telah disukai pengguna.
+3. Membangun sistem rekomendasi yang mampu mengenali preferensi pengguna lain yang memiliki kesamaan minat, untuk memberikan saran buku yang relevan.
 
-### 2.3. Solution statements
+### 2.3. Solution Statements
 
-1. **Menerapkan teknik *Exploratory Data Analysis (EDA)* dan *Data Preparation* untuk memahami struktur data serta melakukan pembersihan, transformasi, dan seleksi data yang relevan dalam konteks buku.**
-2. **Menggunakan pendekatan *Content-Based Filtering* dengan memanfaatkan fitur seperti *authors* dan *title* untuk merekomendasikan buku berdasarkan kemiripan karakteristik dengan buku-buku yang sebelumnya disukai oleh pengguna.**
-3. **Menerapkan pendekatan *Model-Based Collaborative Filtering* berbasis deep learning dengan menggunakan fitur  *user_id*, *book_id*, dan *rating* untuk memberikan rekomendasi buku berdasarkan pola kesamaan antar pengguna.**
+1. Menerapkan teknik *Exploratory Data Analysis (EDA)* dan *Data Preparation* untuk memahami struktur data serta melakukan pembersihan, transformasi, dan seleksi data yang relevan dalam konteks buku.
+2. Menggunakan pendekatan *Content-Based Filtering* dengan memanfaatkan fitur seperti *authors* dan *title* untuk merekomendasikan buku berdasarkan kemiripan karakteristik dengan buku-buku yang sebelumnya disukai oleh pengguna.
+3. Menerapkan pendekatan *Model-Based Collaborative Filtering* berbasis deep learning dengan menggunakan fitur  *user_id*, *book_id*, dan *rating* untuk memberikan rekomendasi buku berdasarkan pola kesamaan antar pengguna.
 
 ## 3. Data Understanding
 
@@ -128,7 +128,27 @@ Tujuan dari penggunaan dataset ini adalah untuk membangun model yang mampu merek
 
 ### 3.3. Exploratory Data Analysis
 
--
+#### 3.3.1. Books
+
+![Books_1](images/eda/books_1.png)
+
+* Menampilkan distribusi rating untuk setiap buku dan mengamati bahwa mayoritas buku memiliki rating di angka 4. Hal ini menunjukkan bahwa ada kecenderungan pembaca untuk memberikan rating tinggi (di angka 4) pada buku. Bisa jadi ini mencerminkan kualitas dari buku yang dibaca.
+
+![Books_2](images/eda/books_2.png)
+
+* Pengarang `Stephen King` adalah pengarang terpopuler disusul oleh `Nora Roberts`, kedua pengarang ini menulis buku dengan jumlah hampir menyentuh diangka 60. Hal ini menunjukkan bahwa mereka sangat produktif dan memiliki banyak karya yang dikenal luas oleh pembaca. Hal ini bisa mencerminkan hal penting:
+
+  * **Jenis Buku yang Ditulis** : Stephen King dikenal dengan genre horor dan thriller yang populer di kalangan banyak pembaca, sementara Nora Roberts dikenal dengan novel romantis yang juga sangat diminati, sehingga kedua pengarang ini menarik perhatian pembaca dari berbagai genre.
+
+#### 3.3.2. Ratings
+
+![ratings_2](images/eda/ratings_1.png)
+
+* Rating 4 yang mendominasi menunjukkan bahwa mayoritas pembaca merasa puas dengan buku-buku dalam dataset ini, disusul oleh rating dengan nilai 5, ini menunjukan bahwa banyak dari buku mendapatkan apreasiasi positif dan bisa juga buku-buku ini memiliki kualitas baik sehingga pengguna tidak ragu memberikan rating-rating yang tinggi.
+
+![ratings_2](images/eda/ratings_2.png)
+
+* Visualisasi menunjukkan bahwa sebagian besar pengguna hanya memberikan sedikit rating, dengan distribusi yang condong ke kanan (right-skewed). Ini berarti mayoritas pengguna tidak terlalu aktif, sementara hanya sedikit pengguna yang memberikan banyak rating.
 
 ## 4. Data Preparation
 
@@ -137,6 +157,8 @@ Tujuan dari penggunaan dataset ini adalah untuk membangun model yang mampu merek
 ### 4.1. Dataset books.csv
 
 #### 4.1.1. Mengatasi Missing Values dan Menghapus Fitur yang Tidak Diperlukan
+
+Tujuan:  Membersihkan data dari *missing values* dan fitur-fitur yang tidak relevan agar tidak mengganggu proses pelatihan model. Dengan memastikan bahwa dataset hanya berisi informasi yang lengkap dan berguna, proses pelatihan model dapat berjalan lebih efisien serta menghasilkan hasil rekomendasi yang lebih akurat dan andal.
 
 * Menghapus nilai kosong pada fitur `original_title`
 
@@ -181,7 +203,7 @@ ratings['rating_norm'] = (ratings['rating'] - min_rating) / (max_rating - min_ra
 
 #### 4.2.2. Memetakan Nilai Unik
 
-Proses dibawah ini adalah mapping atau memetakan nilai unik dari kolom user_id dan book_id ke indeks numerik yang lebih sederhana.
+Proses dibawah ini adalah mapping atau memetakan nilai unik dari kolom user_id dan book_id ke indeks numerik yang lebih sederhana. . Hal ini penting agar data bisa digunakan sebagai input dalam model machine learning, khususnya model berbasis deep learning atau *matrix factorization* yang memerlukan input numerik dan berurutan.
 
 ```python
 user_mapping = {id:i for i, id in enumerate(ratings['user_id'].unique())}
@@ -227,12 +249,21 @@ Contoh: Jika seorang pengguna menyukai beberapa buku oleh penulis tertentu, sist
 * Sulit merekomendasikan item baru tanpa konten
 * Ketergantungan pada fitur konten
 
-#### 5.1.3. Langkah Pengerjaan
+#### 5.1.3. Implementasi
 
-Cosine Similarity
+Langkah pertama adalah menghitung *cossine similarity* terlebih dahulu![1746113580367](images/model/cosine_1.png)
+
+Langkah kedua : Membuat Mapping antara hasil cosine similarity dan item
+
+![cosine_2](images/model/cosine_2.png)
+
+Kemudian dibuat fungsi untuk merekomendasikan buku berdasarkan inputan judul
 
 #### 5.1.4. Output
 
+Adapun untuk Hasil pengujian sistem rekomendasi buku dapat dilihat dimana dilakukan pencarian dengan buku yang mirip dari judul yaitu, **The Hobbit.** Terlihat muncul rekomendasi dengan beberapa judul yang mirip, bahkan penulis yang sama juga.
+
+![predictions_1](images/prediction/content.png)
 
 ### 5.2. Collaborative-Based Filtering
 
@@ -244,7 +275,6 @@ Contoh: Jika pengguna A dan B sama-sama menyukai buku X dan Y, dan pengguna A ju
 
 * Tidak membutuhkan informasi konten
 * Lebih beragam dan fleksibel
-
 * Cocok untuk Skala Besar
 * Rekomendasi Bersifat Personal
 
@@ -252,14 +282,45 @@ Contoh: Jika pengguna A dan B sama-sama menyukai buku X dan Y, dan pengguna A ju
 
 * Jika dataset interaksi terlalu jarang (tidak banyak pengguna memberi rating), sistem sulit menemukan pola yang signifikan.
 * Cold-start problem (untuk pengguna atau item baru)
-
 * Ketika jumlah pengguna dan item sangat besar, perhitungan kemiripan bisa memakan banyak sumber daya.
 
-#### 5.2.3. Arsitektur Model
+#### 5.2.3. Implementasi
 
+1. Input Layer
+   * Menerima ID pengguna dan ID buku sebagai input, dengan masing-masing dalam bentuk integer.
+2. Embedding Layer
+   * Mengubah ID pengguna dan ID buku menjadi vektor.
+   * `embedding_size = 50` artinya masing-masing pengguna dan buku direpresentasikan sebagai vektor 50 dimensi.
+   * Penambahan `l2(1e-6)` bertujuan untuk regularisasi agar model tidak overfitting.
+3. Bias
+   * Menambahkan bias khusus untuk tiap pengguna dan tiap buku.
+   * Ini penting karena beberapa pengguna cenderung memberi rating tinggi atau rendah secara konsisten, dan beberapa buku cenderung mendapat rating lebih tinggi atau lebih rendah dari biasanya.
+4. Flatten dan Dot Product
+   * Menghitung **dot product** antara vektor pengguna dan buku, nantinya akan menghasilkan skor prediksi dasar (tanpa bias).
+5. Add Bias
+   * Menambahkan bias pengguna dan buku ke hasil prediksi akhir untuk menghasilkan prediksi rating.
+6. Model Output
+   * Output model adalah **prediksi rating **dari seorang user terhadap sebuah buku.
+
+**Kompilasi Model**
+
+* **Loss Function** : `Mean Squared Error (MSE)` – untuk menghitung selisih antara rating yang diprediksi dan rating asli yang sudah dinormalisasi.
+* **Optimizer** : `Adam` – dengan learning rate 0.005.
+* **Evaluation Metrics** :
+  * `Mean Absolute Error (MAE)`
+  * `Root Mean Squared Error (RMSE)`
+
+**Training**
+
+* **Batch Size** : 128
+* **Epochs** : 10
+* **Callbacks:** `ReduceLROnPlateau` dan `EarlyStopping`
 
 #### 5.2.4. Output
 
+Adapun hasil dari rekomendasi buku dengan inputan user_id 41587
+
+![predictions_collab](images/prediction/collaborative.png)
 
 ## 6. Evaluation
 
@@ -285,9 +346,11 @@ Penjelasan:
 
 #### 6.1.2. Hasil Evaluasi Content-Based Filtering
 
-`<Images>`
+![Content Based Evaluation](images/evaluation/cb_eval.png)
 
 Insight
+
+* Model content-based filtering dibangun dengan hanya memanfaatkan fitur **`title`** dan  **`authors`** . Meskipun hanya menggunakan 2 fitur saja, hasil evaluasi akhir menunjukkan nilai **precision** sebesar 100%, yang berarti seluruh rekomendasi yang diberikan relevan terhadap minat pengguna.
 
 ### 6.2. Evaluasi Collaborative-Based Filtering
 
@@ -334,12 +397,44 @@ $$
 
 #### 6.2.2 Hasil Evaluasi Collaborative Filtering
 
-`<Images>`
+![Collaborative Filtering](images/evaluation/cf_eval.png)
 
-Insight
+Nilai Aktual
+
+| Matriks | Nilai Aktual        |
+| ------- | ------------------- |
+| MAE     | 0.16321831941604614 |
+| RMSE    | 0.21035751700401306 |
+
+Insight:
+
+* Berdasarkan hasil evaluasi menggunakan metrik **MAE** dan **RMSE**, model *collaborative filtering* menunjukkan performa yang cukup baik. Pada akhir pelatihan, nilai **MAE** untuk data validasi adalah **0.1632**, sementara **RMSE** berada di angka **0.2104**. Nilai ini menunjukkan bahwa rata-rata kesalahan prediksi model cukup rendah.
+* Grafik evaluasi menunjukkan bahwa baik **MAE** maupun **RMSE** mengalami penurunan tajam pada beberapa *epoch* awal, khususnya dari epoch 1 ke 2, yang mengindikasikan model berhasil belajar secara efisien di awal proses pelatihan. Setelah epoch ke-3, *epoch* cenderung stabil, sementara training loss terus menurun secara bertahap.
 
 ### 6.3. Dampak terhadap Business Understanding
 
--
+#### 6.3.1. Problem Statements
+
+* Pengolahan data berhasil dilakukan melalui proses EDA dan pembersihan data, sehingga data yang digunakan dalam sistem rekomendasi menjadi lebih baik dan berkualitas.
+* Kemiripan antar buku berhasil dimanfaatkan melalui pendekatan *Content-Based Filtering*, yang merekomendasikan buku berdasarkan kesamaan judul dan penulis.
+* Preferensi antar pengguna ditangkap dengan baik oleh pendekatan *Collaborative Filtering* berbasis deep learning, yang mampu mengidentifikasi pola pilihan antar pengguna.
+
+#### 6.3.2. Goals
+
+* Sistem rekomendasi berhasil dikembangkan dengan data yang sudah dipersiapkan secara efisien, sesuai dengan tujuan awal untuk mendukung pembangunan sistem.
+* Rekomendasi yang dihasilkan dari buku-buku serupa menunjukkan tingkat relevansi tinggi, membuktikan bahwa sistem dapat menyesuaikan saran dengan preferensi pengguna.
+* Sistem juga mampu menyarankan buku dari hasil analisis minat pengguna lain yang serupa, sehingga tujuan untuk mengenali dan memanfaatkan preferensi antar pengguna tercapai.
+
+#### 6.3.3. Solution Statements
+
+* Penerapan EDA dan data preparation telah memberikan data yang bersih, lengkap, dan relevan, yang mendukung kualitas input ke dalam model.
+* Pendekatan *Content-Based Filtering* terbukti efektif dalam memberikan rekomendasi akurat dengan precision tinggi hanya menggunakan fitur sederhana seperti *title* dan *authors*.
+* Pendekatan *Model-Based Collaborative Filtering* berbasis deep learning menghasilkan metrik MAE dan RMSE yang rendah, menunjukkan bahwa model cukup akurat dalam memprediksi preferensi pengguna berdasarkan pola rating.
 
 ## 7. Referensi
+
+[1] B. S. Zalukhu dan R. P. S. Zalukhu, “Analisis Rendahnya Minat Baca dan Gerakan Literasi Sekolah,”  *IDENTIK* , vol. 1, no. 3, hlm. 1–6, Nov 2024, doi: 10.70134/identik.v1i3.50.
+
+[2] U. Javed, K. Shaukat, I. A. Hameed, F. Iqbal, T. Mahboob Alam, dan S. Luo, “A Review of Content-Based and Context-Based Recommendation Systems,”  *Int. J. Emerg. Technol. Learn.* ,vol. 16, no. 03, hlm. 274, Feb 2021, doi: 10.3991/ijet.v16i03.18851.
+
+[3] O. Remadnia, F. Maazouzi, dan D. Chefrour, “Hybrid Book Recommendation System, Using Collaborative Filtering and Embedding Based Deep Learning,”  *IJCAI* ,vol. 49, no. 8, Feb 2025, doi: 10.31449/inf.v49i8.6950.
