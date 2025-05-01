@@ -112,7 +112,7 @@ Tujuan dari penggunaan dataset ini adalah untuk membangun model yang mampu merek
 
 #### 3.2.2. Deskripsi Dataset
 
-* Dataset ini terdiri dari 98.1756 baris data dengan 3 fitur numerikal.
+* Dataset ini terdiri dari 981.756 baris data dengan 3 fitur numerikal.
 
 #### 3.2.3. Kondisi Dataset
 
