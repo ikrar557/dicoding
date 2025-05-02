@@ -188,6 +188,25 @@ books=books.drop(columns=['isbn', 'isbn13'])
   books['image_url'] = books['image_url'].fillna('No Image')
   ```
 
+#### 4.1.2. Pemilihan Fitur yang Relevan
+
+Menentukan fitur yang relevan untuk `modeling` pada `Content-Based`, yaitu fitur `title` dan `authors`, jadi rekomendasi akan diberikan berdasarkan `judul` dan `authors`.
+
+```python
+books['title_authors'] = books['title'] + ' ' + books['authors']
+
+indices = pd.Series(books.index, index=books['title'])
+```
+
+#### 4.1.3. Vektorisasi Text dengan TF-IDF
+
+Melakukan vektorisasi terhadap fitur teks yang telah ditentukan sebelumnya menggunakan metode TF-IDF, dengan tujuan untuk mengubah data teks menjadi representasi numerik berdasarkan tingkat kepentingan setiap kata dalam suatu dokumen.
+
+```python
+tf = TfidfVectorizer(analyzer='word', ngram_range=(1, 2), min_df=1, stop_words='english')
+tfidf_matrix = tf.fit_transform(books['title_authors'])
+```
+
 ### 4.2. Dataset ratings.csv
 
 #### 4.2.1.  Normalisasi Fitur Rating
@@ -226,7 +245,7 @@ print(f"Jumlah data untuk validasi: {len(validation_data)}")
 print(f"Jumlah data untuk pengujian: {len(test_data)}")
 ```
 
-## 5. Modeling
+#### 5. Modeling
 
 ---
 
@@ -251,7 +270,8 @@ Contoh: Jika seorang pengguna menyukai beberapa buku oleh penulis tertentu, sist
 
 #### 5.1.3. Implementasi
 
-Langkah pertama adalah menghitung *cossine similarity* terlebih dahulu![1746113580367](images/model/cosine_1.png)
+Langkah pertama adalah menghitung *cossine similarity* terlebih dahulu
+![1746113580367](images/model/cosine_1.png)
 
 Langkah kedua : Membuat Mapping antara hasil cosine similarity dan item
 
@@ -267,7 +287,7 @@ Adapun untuk Hasil pengujian sistem rekomendasi buku dapat dilihat dimana dilaku
 
 ### 5.2. Collaborative-Based Filtering
 
-*Collaborative Filtering* adalah metode sistem rekomendasi yang memberikan saran berdasarkan **pola interaksi antar pengguna**, bukan berdasarkan konten dari item.. Pendekatan ini mengasumsikan bahwa jika dua pengguna memberikan rating yang mirip pada sejumlah item, maka mereka kemungkinan akan menyukai item yang sama di masa depan.
+*Collaborative Filtering* adalah metode sistem rekomendasi yang memberikan saran berdasarkan **pola interaksi antar pengguna**, bukan berdasarkan konten dari item. Pendekatan ini mengasumsikan bahwa jika dua pengguna memberikan rating yang mirip pada sejumlah item, maka mereka kemungkinan akan menyukai item yang sama di masa depan.
 
 Contoh: Jika pengguna A dan B sama-sama menyukai buku X dan Y, dan pengguna A juga menyukai buku Z, maka sistem bisa merekomendasikan buku Z kepada pengguna B.
 
@@ -318,7 +338,7 @@ Contoh: Jika pengguna A dan B sama-sama menyukai buku X dan Y, dan pengguna A ju
 
 #### 5.2.4. Output
 
-Adapun hasil dari rekomendasi buku dengan inputan user_id 41587
+Adapun hasil dari rekomendasi buku dengan inputan user_id 52007
 
 ![predictions_collab](images/prediction/collaborative.png)
 
@@ -403,8 +423,8 @@ Nilai Aktual
 
 | Matriks | Nilai Aktual        |
 | ------- | ------------------- |
-| MAE     | 0.16321831941604614 |
-| RMSE    | 0.21035751700401306 |
+| MAE     | 0.16318336129188538 |
+| RMSE    | 0.21048660576343536 |
 
 Insight:
 
